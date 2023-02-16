@@ -42,12 +42,17 @@ function setGreet() {
   setGreet();
 
   function setLocalStorage() {
+    const name = document.querySelector('.name');
+    const text = new Date();
     localStorage.setItem('name', name.value);
   }
   window.addEventListener('beforeunload', setLocalStorage);
 
 
   function getLocalStorage() {
+
+    const name = document.querySelector('.name');
+    const text = new Date();
     if(localStorage.getItem('name')) {
       name.value = localStorage.getItem('name');
     }
