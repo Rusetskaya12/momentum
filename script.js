@@ -58,3 +58,41 @@ function setGreet() {
     }
   }
   window.addEventListener('load', getLocalStorage);
+
+
+
+  const imageUrls = [
+"/assets/img/01.jpg",
+"/assets/img/02.jpg",
+"/assets/img/03.jpg",
+"/assets/img/04.jpg",
+"/assets/img/05.jpg",
+"/assets/img/06.jpg",
+"/assets/img/11.jpg",
+"/assets/img/12.jpg",
+"/assets/img/13.jpg",
+"/assets/img/14.jpg",
+"/assets/img/15.jpg",
+"/assets/img/16.jpg",
+"/assets/img/morning1.jpg",
+"/assets/img/morning2.jpg",
+"/assets/img/morning3.jpg",
+"/assets/img/morning4.jpg",
+"/assets/img/morning5.jpg",
+"/assets/img/morning6.jpg",
+"/assets/img/morning7.jpg",
+"/assets/img/morning8.jpg",
+]
+
+const images = imageUrls.map(url => {
+  const img = new Image()
+  img.src = url
+  return img
+});
+let index = 1;
+
+setInterval(()=>{
+  document.body.style.backgroundImage = `url(${images[index].src})`
+  index = index >= images.length-1 ? 0 : index + 1
+}, 5000)
+
