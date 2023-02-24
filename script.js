@@ -26,19 +26,19 @@ showDate();
 
 
 function setGreet() {
-    const greeting = document.querySelector('.greeting')
+    const greeting = document.querySelector('.greeting');
     const today = new Date(),
       hour = today.getHours()
-    if (hour > 18 || hour < 24) {
-      greeting.textContent = 'Good evening,  '
-    } else if (hour > 6 || hour < 12) {
-      greeting.textContent = 'Good morning,  '
-    } else if (hour > 12 || hous < 18) {
-      greeting.textContent = 'Good afternoon,  '
+    if (hour >= 18 || hour <= 23) {
+      greeting.textContent = 'Good evening,  ';
+    } else if (hour >= 6 || hour <= 12) {
+      greeting.textContent = 'Good morning,  ';
+    } else if (hour > 12 || hour < 18) {
+      greeting.textContent = 'Good afternoon,  ';
     } else {
-      greeting.textContent = 'Good night,  '
+      greeting.textContent = 'Good night,  ';
     }
-  };
+  }
   setGreet();
 
   function setLocalStorage() {
@@ -84,12 +84,22 @@ function setGreet() {
 "/assets/img/morning8.jpg",
 ]
 
+
+function next () {
+  
+}
+function prev () {
+  alert("dd")
+}
+
+
 const images = imageUrls.map(url => {
   const img = new Image()
   img.src = url
   return img
 });
 let index = 1;
+
 
 setInterval(()=>{
   document.body.style.backgroundImage = `url(${images[index].src})`
